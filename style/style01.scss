@@ -1,0 +1,124 @@
+@import "./reset.scss";
+
+body {
+  background-color: #dce6d1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: max-content;
+}
+
+.phone {
+  background-color: black;
+  border-radius: 50px;
+  height: 95%;
+  width: 380px;
+  padding: 50px 20px;
+  box-sizing: border-box;
+}
+
+.header {
+  overflow-x: scroll;
+  .header__list {
+    display: flex;
+    gap: 10px;
+    color: white;
+    width: max-content;
+    .header__item {
+      border: 1px solid rgba($color: #fff, $alpha: 0.5);
+      padding: 10px;
+      border-radius: 20px;
+    }
+    .header__item--inverted {
+      background-color: white;
+      color: black;
+    }
+  }
+}
+
+.cards {
+  margin: 20px 0px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+
+  .cards__card {
+    background-color: white;
+    padding: 15px 10px 10px;
+    border-radius: 15px;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    gap: 15px;
+    .card__title {
+      font-size: 28px;
+      line-height: 1.2em;
+    }
+    .card__footer {
+      font-size: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .card__progress-txt {
+        align-self: flex-start;
+      }
+      .card__progress-bar {
+        height: 5px;
+        width: 100%;
+        display: flex;
+        div {
+          height: 100%;
+        }
+      }
+      .card__progress-bar--complete {
+        background-color: white;
+        width: 63%;
+      }
+      .card__progress-bar--incomplete {
+        background-color: #52575b;
+        width: 37%;
+      }
+      span {
+        border: 1px solid black;
+        padding: 5px 10px;
+        border-radius: 20px;
+      }
+      .card__price {
+        background-color: #ffdd2d;
+      }
+      .card__price--paid {
+        background-color: #e9affc;
+      }
+      .card__length {
+        background-color: white;
+      }
+    }
+    &:first-child {
+      background-color: #292d33;
+      border: 1px solid white;
+      color: white;
+      .card__footer {
+        flex-flow: column;
+        gap: 5px;
+      }
+    }
+    &:nth-child(2) {
+      background-color: #fcfbf9;
+    }
+    &:nth-child(3) {
+      background-color: #f9fdbc;
+    }
+    &:nth-child(4) {
+      background-color: #beaef9;
+    }
+    &:nth-child(5) {
+      background-color: #fed4d4;
+    }
+    &:last-child {
+      background-color: #d1ffde;
+    }
+    &:nth-child(3n) {
+      grid-column: span 2;
+    }
+  }
+}
